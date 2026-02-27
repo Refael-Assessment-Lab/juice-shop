@@ -48,3 +48,8 @@ Utilized Cycode as an ASPM solution to consolidate security findings and map the
 - Secrets: Identified exposed tokens in the commit history.
 - SAST: Detected critical vulnerabilities including SQL Injection and XSS.
 - SCA: Flagged outdated dependencies with known CVEs.
+
+### Final Proof of Detection
+- Status: Violation Successfully Detected.
+- Finding: Generic Secret/Password found in security_test.txt.
+- Impact: Confirmed real-time secret scanning is active and reporting to the ASPM dashboard.

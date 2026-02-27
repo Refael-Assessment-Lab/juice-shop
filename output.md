@@ -22,3 +22,29 @@ By implementing Branch Protection Rules and Status Checks, along with Pre-commit
 
 ### 3. Repository Settings Changes
 In production, I would use a CODEOWNERS file to enforce expert review and restrict direct access to master.
+
+## Final Walkthrough
+
+### Connection Process
+Integrated Cycode via GitHub App using a dedicated Organization for full SDLC visibility (Code, Build, and Issues).
+
+### Platform Overview
+Utilized Cycode as an ASPM solution to consolidate security findings and map the software supply chain.
+
+### Findings
+- Secrets: Identified exposed tokens in the commit history.
+- SAST: Detected critical vulnerabilities including SQL Injection and XSS.
+- SCA: Flagged outdated dependencies with known CVEs.
+
+## Final Walkthrough
+
+### Connection Process
+Integrated Cycode via GitHub App using a dedicated Organization for full SDLC visibility (Code, Build, and Issues).
+
+### Platform Overview
+Utilized Cycode as an ASPM solution to consolidate security findings and map the software supply chain.
+
+### Findings
+- Secrets: Identified exposed tokens in the commit history.
+- SAST: Detected critical vulnerabilities including SQL Injection and XSS.
+- SCA: Flagged outdated dependencies with known CVEs.

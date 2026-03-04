@@ -1,55 +1,48 @@
-# My Cycode Assessment - Juice Shop Project
+My Cycode Assessment - Juice Shop Project
+Project Overview
+I successfully deployed the OWASP Juice Shop using Docker on Render to simulate a modern, vulnerable cloud-native environment and analyzed it using the Cycode ASPM platform.
 
-## Project Overview
-I deployed the OWASP Juice Shop using Docker on Render.
+Live Application
+Deployment Platform: Render (PaaS)
 
-## Live Application
+Application URL: 
 
+Project Screenshots
+1. Application Homepage
+2. Render Deployment Status
+Discussion Questions
+1. Is there anything wrong with committing directly to master?
+Yes, it is a critical security risk. Direct commits bypass the "Shift Left" security philosophy. They circumvent mandatory peer reviews and automated security gates (SAST, SCA, and Secret Scanning). In a production environment, this allows vulnerabilities or hardcoded secrets to reach production without any oversight, potentially leading to a supply chain attack.
 
-## Project Screenshots
-### 1. Application Homepage
+2. How would you prevent that?
+I would implement Branch Protection Rules to enforce:
 
-### 2. Render Deployment Status
+Mandatory Pull Requests: No code reaches master without at least one approval.
 
+Required Status Checks: Automated security scans must pass before merging.
 
-## Discussion Questions
+Signed Commits: Ensuring the integrity and authorship of the code.
 
-### 1. Is there anything wrong with committing directly to master?
-Yes. It creates a security blind spot and bypasses 'Shift Left' security gates like SAST and Secret Scanning.
+3. Repository Settings Changes
+In a real-world scenario, I would implement a CODEOWNERS file to mandate reviews from security experts for sensitive directories. I would also enable Push Protection to block developers from accidentally pushing secrets to the remote repository in real-time.
 
-### 2. How would you prevent that?
-By implementing Branch Protection Rules and Status Checks, along with Pre-commit hooks.
-
-### 3. Repository Settings Changes
-In production, I would use a CODEOWNERS file to enforce expert review and restrict direct access to master.
-
-## Final Walkthrough
-
-### Connection Process
+Final Walkthrough & Security Findings
+Connection Process
 Integrated Cycode via GitHub App using a dedicated Organization for full SDLC visibility (Code, Build, and Issues).
 
-### Platform Overview
-Utilized Cycode as an ASPM solution to consolidate security findings and map the software supply chain.
+Platform Overview
+Utilized Cycode as an ASPM (Application Security Posture Management) solution to consolidate security findings and map the software supply chain.
 
-### Findings
-- Secrets: Identified exposed tokens in the commit history.
-- SAST: Detected critical vulnerabilities including SQL Injection and XSS.
-- SCA: Flagged outdated dependencies with known CVEs.
+Key Findings
+Secrets: Identified exposed tokens in the commit history through historical scanning.
 
-## Final Walkthrough
+SAST: Detected critical vulnerabilities including SQL Injection and XSS within the application logic.
 
-### Connection Process
-Integrated Cycode via GitHub App using a dedicated Organization for full SDLC visibility (Code, Build, and Issues).
+SCA: Flagged outdated dependencies and vulnerable libraries with known CVEs.
 
-### Platform Overview
-Utilized Cycode as an ASPM solution to consolidate security findings and map the software supply chain.
+Final Proof of Detection
+Status: Violation Successfully Detected.
 
-### Findings
-- Secrets: Identified exposed tokens in the commit history.
-- SAST: Detected critical vulnerabilities including SQL Injection and XSS.
-- SCA: Flagged outdated dependencies with known CVEs.
+Finding: Generic Secret/Password found in security_test.txt.
 
-### Final Proof of Detection
-- Status: Violation Successfully Detected.
-- Finding: Generic Secret/Password found in security_test.txt.
-- Impact: Confirmed real-time secret scanning is active and reporting to the ASPM dashboard.
+Impact: Confirmed real-time secret scanning is active and reporting correctly to the ASPM dashboard.

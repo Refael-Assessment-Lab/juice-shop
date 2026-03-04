@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-I successfully deployed the OWASP Juice Shop using Docker on Render to simulate a modern, vulnerable cloud-native environment and analyzed it using the Cycode ASPM platform.
+I successfully deployed the OWASP Juice Shop using Docker on Render to simulate a modern, vulnerable cloud-native environment and analyzed it using the Cycode **ASPM** platform.
 
 Live Application
 Deployment Platform: Render (PaaS)
@@ -16,7 +16,7 @@ https://juice-shop-1-6o9n.onrender.com
 
 ![Render](./render.png)
 
-# Discussion Questions
+## Discussion Questions
 
 1. Is there anything wrong with committing directly to master?
 
@@ -34,9 +34,9 @@ I would implement **Branch Protection Rules** to enforce:
 
 3. Repository Settings Changes
 
-In a real-world scenario, I would implement a CODEOWNERS file to mandate reviews from security experts for sensitive directories. I would also enable Push Protection to block developers from accidentally pushing secrets to the remote repository in real-time.
+In a real-world scenario, I would implement a CODEOWNERS file to mandate reviews from security experts for sensitive directories. I would also enable **Push Protection** to block developers from accidentally pushing secrets to the remote repository in real-time.
 
-# Final Walkthrough & Security Findings
+## Final Walkthrough & Security Findings
 
 **Connection Process**
 Integrated Cycode via GitHub App using a dedicated Organization for full SDLC visibility (Code, Build, and Issues).
